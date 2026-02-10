@@ -741,7 +741,7 @@ h6,
 .footer__shape-regular-left {
     position: absolute;
     top: -30px;
-    left: -100px;
+    left: -40px;
     width: 260px;
     z-index: 60;
     transform-origin: center center;
@@ -749,7 +749,7 @@ h6,
 .footer__shape-solid-left {
     position: absolute;
     bottom: -10px;
-    left: -40px;
+    left: -10px;
     width: 300px;
     z-index: 20;
     transform-origin: center center;
@@ -757,20 +757,16 @@ h6,
 .footer__shape-regular-right {
     position: absolute;
     top: -30px;
-    right: -100px;
+    right: -200px;
     width: 260px;
-    /* Mirror horizontally so triangle tip points inward */
-    transform: scaleX(-1);
     z-index: 60;
     transform-origin: center center;
 }
 .footer__shape-solid-right {
     position: absolute;
     bottom: -10px;
-    right: -40px;
+    right: -200px;
     width: 300px;
-    /* Mirror horizontally so triangle tip points inward */
-    transform: scaleX(-1);
     z-index: 20;
     transform-origin: center center;
 }
@@ -778,7 +774,8 @@ h6,
 /* Large glow / semicircle at top center */
 .footer__shadow-shape {
     position: absolute;
-    top: -260px;
+    bottom: -120px; /* moved to bottom of footer */
+    top: auto;
     left: 50%;
     transform: translateX(-50%);
     width: 1200px;
@@ -1072,7 +1069,7 @@ h6,
     .footer__shape-solid-right{
         display:none;
     }
-    .footer__shadow-shape{ top: -120px; width: 720px; opacity:.9 }
+    .footer__shadow-shape{ bottom: -60px; top: auto; width: 720px; opacity:.9 }
     .footer__wrp{ flex-direction:column }
     .footer__item{ min-width:100%; padding:20px }
     .footer-area{ padding-top:80px }

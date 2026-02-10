@@ -71,11 +71,21 @@
                 alertBox.innerHTML = '<div class="alert alert-danger">Por favor completa los campos requeridos.</div>';
                 return;
             }
-            fetch('/contact-form-handler.php', {
-                method: 'POST',
-                body: formData
-            }).then(function (res) {
-                return res.json();
+            // Determine endpoint: data-endpoint on form or fallback to PHP handler
+            var endpoint = form.dataset.endpoint || '/contact-form-handler.php';
+            var fetchOptions = { method: 'POST', body: formData };
+            // If using Formspree, request JSON response
+            var headers = {};
+            if (endpoint.indexOf('formspree.io') !== -1 || endpoint.indexOf('formspree.com') !== -1) {
+                headers['Accept'] = 'application/json';
+                fetchOptions.headers = headers;
+            }
+
+            fetch(endpoint, fetchOptions).then(function (res) {
+                // If Formspree returns 200 with empty body, treat as success
+                var ct = res.headers.get('content-type') || '';
+                if (ct.indexOf('application/json') !== -1) return res.json();
+                return res.text().then(function (t) { return { success: res.ok, message: t }; });
             }).then(function (data) {
                 if (data && data.success) {
                     alertBox.innerHTML = '<div class="alert alert-success">' + (data.message || 'Mensaje enviado correctamente.') + '</div>';
