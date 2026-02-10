@@ -9,7 +9,7 @@
       <div class="col-lg-7">
         <h4 class="text-center lh-base mb-4">Receive messages instantly with our PHP and Ajax contact form - available in the <a href="https://htmlcodex.com/downloading/?item=2696">Pro Version</a> only.</h4>
         <div class="wow fadeIn" data-wow-delay="0.3s">
-          <form id="contactForm">
+          <form id="contactForm" data-endpoint="https://formspree.io/f/yourFormId">
             <div class="row g-3">
               <div class="col-md-6"><div class="form-floating"><input type="text" class="form-control" id="name" placeholder="Your Name" /><label for="name">Your Name</label></div></div>
               <div class="col-md-6"><div class="form-floating"><input type="email" class="form-control" id="email" placeholder="Your Email" /><label for="email">Your Email</label></div></div>
@@ -19,6 +19,7 @@
             </div>
           </form>
           <div id="contactAlert" class="mt-3"></div>
+          <small class="text-muted d-block mt-2">Si no tienes hosting PHP, registra un formulario en Formspree y reemplaza <code>yourFormId</code> en el atributo <code>data-endpoint</code> del formulario.</small>
         </div>
       </div>
     </div>
