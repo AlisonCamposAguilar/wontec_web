@@ -252,48 +252,48 @@ h6,
 /*** Service ***/
 .service-item {
     position: relative;
-    padding: 45px 30px;
+    padding: 30px;
     background: #FFFFFF;
-    transition: .5s;
+    transition: transform .35s, box-shadow .35s;
+    min-height: 220px;
 }
 
 .service-item:hover {
-    background: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(3,12,30,0.12);
 }
 
 .service-item .service-icon {
-    margin: 0 auto 20px auto;
-    width: 90px;
-    height: 90px;
-    color: var(--primary);
-    background: var(--light);
-    transition: .5s;
+    margin: 0 auto 18px auto;
+    width: auto;
+    height: auto;
+    transition: transform .35s;
 }
 
-.service-item:hover .service-icon {
-    background: #FFFFFF;
+.service-icon .icon-circle {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,#3c72fc 0%, #1f63c9 100%);
+    color: #fff;
+    box-shadow: 0 8px 26px rgba(31,99,201,0.18);
 }
+.service-item:hover .icon-circle { transform: translateY(-6px) scale(1.03); }
 
 .service-item h5,
 .service-item p {
-    transition: .5s;
-}
-
-.service-item:hover h5,
-.service-item:hover p {
-    color: #FFFFFF;
+    transition: color .25s ease;
 }
 
 .service-item a.btn {
     position: relative;
-    display: flex;
+    display: inline-flex;
     color: var(--primary);
-    transition: .5s;
+    transition: .25s;
     z-index: 1;
-}
-
-.service-item:hover a.btn {
-    color: var(--primary);
 }
 
 .service-item a.btn::before {
@@ -480,6 +480,15 @@ h6,
     .partners-section .partner-icon { width:64px; height:64px; top:-32px; }
     .partners-section .partner-card h5 { margin-top:42px; font-size:.9rem; }
 }
+
+/* Service grid adjustments */
+.service-grid .service-item { background: #ffffff; color: var(--dark); }
+.service-grid .service-item h5 { color: var(--dark); font-weight:700; }
+.service-grid .service-item p { color: rgba(20,24,62,.7); }
+
+/* Ensure buttons in service cards look consistent */
+.service-grid .service-item .btn-outline-primary { border-color: rgba(31,99,201,0.18); color: var(--primary); }
+.service-grid .service-item .btn-outline-primary:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
 
 /* Partners small-icon cards */
@@ -1065,3 +1074,59 @@ h6,
     .footer__item{ min-width:100%; padding:20px }
     .footer-area{ padding-top:80px }
 }
+
+/* Cases / Case Study: uniform image sizing and nicer overlay */
+.case-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f1724;
+    position: relative;
+}
+.case-item img.img-fluid {
+    width: 100%;
+    height: 420px; /* aumentado: más grande en desktop */
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(.2,.9,.2,1);
+}
+.case-item:hover img.img-fluid { transform: scale(1.06); }
+
+.case-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(3,6,12,0.62) 60%, rgba(3,6,12,0.9) 100%);
+    align-items: flex-start;
+    text-decoration: none;
+}
+.case-overlay small {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    font-size: 12px;
+}
+.case-overlay h5 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+.case-overlay .btn-square {
+    background: #fff;
+    color: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .case-item img.img-fluid { height: 360px; }
+}
+@media (max-width: 576px) {
+    .case-item img.img-fluid { height: 280px; }
+    .case-overlay { padding: 12px; }
+}
+

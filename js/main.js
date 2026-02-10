@@ -53,6 +53,48 @@
         initBrandSwiper();
     });
 
+    // Inicializar el formulario de contacto (AJAX)
+    function initContactForm() {
+        var form = document.getElementById('contactForm');
+        var alertBox = document.getElementById('contactAlert');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!alertBox) return;
+            alertBox.innerHTML = '';
+            var formData = new FormData(form);
+            // basic client-side validation
+            var name = formData.get('name') || '';
+            var email = formData.get('email') || '';
+            var message = formData.get('message') || '';
+            if (!name.trim() || !email.trim() || !message.trim()) {
+                alertBox.innerHTML = '<div class="alert alert-danger">Por favor completa los campos requeridos.</div>';
+                return;
+            }
+            fetch('/contact-form-handler.php', {
+                method: 'POST',
+                body: formData
+            }).then(function (res) {
+                return res.json();
+            }).then(function (data) {
+                if (data && data.success) {
+                    alertBox.innerHTML = '<div class="alert alert-success">' + (data.message || 'Mensaje enviado correctamente.') + '</div>';
+                    form.reset();
+                } else {
+                    alertBox.innerHTML = '<div class="alert alert-danger">' + (data.message || 'Error al enviar el mensaje.') + '</div>';
+                }
+            }).catch(function (err) {
+                alertBox.innerHTML = '<div class="alert alert-danger">Error en la comunicación con el servidor.</div>';
+            });
+        });
+    }
+
+    // Intentar inicializar el formulario ahora y cuando carguen los partials
+    initContactForm();
+    document.addEventListener('partialsLoaded', function () {
+        initContactForm();
+    });
+
 
     // Sticky Navbar
     $(window).scroll(function () {
