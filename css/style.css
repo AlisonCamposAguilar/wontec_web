@@ -1130,3 +1130,73 @@ h6,
     .case-overlay { padding: 12px; }
 }
 
+/*** Card Hover Effect ***/
+.btn-outline-primary.outline-fill {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Fondo animado */
+.btn-outline-primary.outline-fill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #0d6efd;
+    border-radius: 50px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+/* Hover */
+.btn-outline-primary.outline-fill:hover {
+    background-color: transparent !important;
+    color: #031269 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline-primary.outline-fill:hover::before {
+    transform: scaleX(1);
+}
+
+/*** Case Description Modal ***/
+.case-description-modal {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(4px);
+    z-index: 1000 !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.case-description-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.case-item:hover .case-description-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.case-description-card {
+    background-color: white;
+    animation: slideInCard 0.3s ease-in-out;
+    cursor: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close-description {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-description:hover {
+    background-color: #0a58ca !important;
+    transform: translateY(-2px);
+}
