@@ -106,6 +106,115 @@
     });
 
 
+    // Active nav state based on current page/hash
+    function setActiveNavLink() {
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        if (!navLinks.length) return;
+
+        navLinks.forEach(function (link) {
+            link.classList.remove('active');
+        });
+
+        var path = window.location.pathname || '';
+        var hash = window.location.hash || '';
+        var isIndex = path === '/' || path.endsWith('/index.html');
+
+        // If on subpages (like /pages/*), default to Services
+        if (!isIndex && path.indexOf('/pages/') !== -1) {
+            hash = '#services';
+            path = '/index.html';
+        }
+
+        var matched = false;
+        navLinks.forEach(function (link) {
+            var url = new URL(link.getAttribute('href'), window.location.origin);
+            var linkPath = url.pathname;
+            var linkHash = url.hash || '';
+
+            if (isIndex && hash && linkPath.endsWith('/index.html') && linkHash === hash) {
+                link.classList.add('active');
+                matched = true;
+            } else if (!hash && linkPath === path) {
+                link.classList.add('active');
+                matched = true;
+            }
+        });
+
+        // Fallback to Home on index without hash
+        if (!matched && isIndex && !hash) {
+            navLinks.forEach(function (link) {
+                var url = new URL(link.getAttribute('href'), window.location.origin);
+                if (url.pathname.endsWith('/index.html') && !url.hash) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    }
+
+    setActiveNavLink();
+    document.addEventListener('partialsLoaded', function () {
+        setActiveNavLink();
+    });
+    window.addEventListener('hashchange', function () {
+        setActiveNavLink();
+    });
+
+
+    // Case Description Modal
+    function initCaseDescriptionModal() {
+        // Asegurar que todos los modales estén ocultos al inicializar
+        var modals = document.querySelectorAll('.case-description-modal');
+        modals.forEach(function(modal) {
+            modal.classList.remove('show');
+        });
+        
+        // Agregar hover functionality al case-item
+        var caseItems = document.querySelectorAll('.case-item');
+        caseItems.forEach(function(item) {
+            var modal = item.querySelector('.case-description-modal');
+            if (!modal) return;
+            
+            item.addEventListener('mouseenter', function() {
+                modal.classList.add('show');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                modal.classList.remove('show');
+            });
+        });
+        
+        // Cerrar modal con botón close
+        var closeButtons = document.querySelectorAll('.close-description');
+        closeButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var modal = btn.closest('.case-description-modal');
+                if (modal) {
+                    modal.classList.remove('show');
+                }
+            });
+        });
+        
+        // Cerrar modal al hacer clic fuera de la card
+        modals.forEach(function(modal) {
+            modal.addEventListener('click', function(e) {
+                // Solo cerrar si se hace clic en el fondo (modal), no en la card
+                if (e.target === modal) {
+                    e.preventDefault();
+                    modal.classList.remove('show');
+                }
+            });
+        });
+    }
+    
+    // Inicializar modal inmediatamente y cuando carguen los partials
+    initCaseDescriptionModal();
+    document.addEventListener('partialsLoaded', function () {
+        initCaseDescriptionModal();
+    });
+
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
