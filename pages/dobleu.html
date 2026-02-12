@@ -25,8 +25,13 @@
     <div class="container nav-content">
       <img src="/img/LOGO_WONTEC.png" alt="image" class="navbar-brand"/>
       <nav id="menu">
-        <a href="/index.html">Inicio</a>
+        <a href="/index.html" data-i18n="nav.home">Inicio</a>
       </nav>
+
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
 
       <button class="menu-toggle" id="toggle">☰</button>
     </div>
@@ -35,7 +40,7 @@
   <!-- HERO -->
   <section class="hero reveal">
     <div class="container hero-content">
-      <h1>DOBLEU</h1>
+      <h1 data-i18n="hero.title">DOBLEU</h1>
 
     </div>
   </section>
@@ -44,16 +49,16 @@
   <section class="trusted reveal">
     <div class="container partners">
       <div class="partners-text">
-        <h3>Conoce todo lo que DOBLEU tiene para ofrecerte </h3>
+        <h3 data-i18n="partners.text">Conoce todo lo que DOBLEU tiene para ofrecerte </h3>
       </div>
 
       <div class="partners-logos carousel" aria-hidden="false">
         <div class="carousel-track">
-          <div class="carousel-item item-1" style="font-family: 'Poppins', system-ui, sans-serif;">DOBLEU App</div>
-          <div class="carousel-item item-2" style="font-family: 'Merriweather', serif;">DOBLEU Partners</div>
-          <div class="carousel-item item-3" style="font-family: 'Roboto Slab', serif;">DOBLEU Rider</div>
-          <div class="carousel-item item-4" style="font-family: 'Lora', serif;">DOBLEU Home</div>
-          <div class="carousel-item item-5" style="font-family: 'Montserrat', sans-serif;">DOBLEU Box</div>
+          <div class="carousel-item item-1" style="font-family: 'Poppins', system-ui, sans-serif;"><span data-i18n="dobleu.carousel.item1">DOBLEU App</span></div>
+          <div class="carousel-item item-2" style="font-family: 'Merriweather', serif;"><span data-i18n="dobleu.carousel.item2">DOBLEU Partners</span></div>
+          <div class="carousel-item item-3" style="font-family: 'Roboto Slab', serif;"><span data-i18n="dobleu.carousel.item3">DOBLEU Rider</span></div>
+          <div class="carousel-item item-4" style="font-family: 'Lora', serif;"><span data-i18n="dobleu.carousel.item4">DOBLEU Home</span></div>
+          <div class="carousel-item item-5" style="font-family: 'Montserrat', sans-serif;"><span data-i18n="dobleu.carousel.item5">DOBLEU Box</span></div>
         </div>
         <div class="carousel-dots" aria-hidden="true"></div>
       </div>
@@ -70,14 +75,14 @@
           <img src="/img/dobleu_usuario.png" alt="App screen" />
         </div>
 
-        <div class="feature-content">
-          <h2 class="feature-title">Tu mundo local en un solo lugar</h2>
-          <p class="feature-sub">La plataforma definitiva para zonas semiurbanas que conecta a los usuarios con lo mejor de su entorno. Desde pedir comida y servicios de lavandería hasta enviar paquetes, todo gestionado con simplicidad y rapidez.</p>
+          <div class="feature-content">
+            <h2 class="feature-title" data-i18n="dobleu.feature1.title">Tu mundo local en un solo lugar</h2>
+            <p class="feature-sub" data-i18n="dobleu.feature1.p">La plataforma definitiva para zonas semiurbanas que conecta a los usuarios con lo mejor de su entorno. Desde pedir comida y servicios de lavandería hasta enviar paquetes, todo gestionado con simplicidad y rapidez.</p>
 
           <ul class="feature-list">
-            <li><strong>Comida a domicilio:</strong> Tu antojo al alcance de un clic.</li>
-            <li><strong>Servicios:</strong> Desde una reparación hasta lavandería, todo eso y más dentro de la app.</li>
-            <li><strong>Mandaditos:</strong> No te preocupes, nosotros lo llevamos.</li>
+            <li><span data-i18n="dobleu.feature1.li1"><strong>Comida a domicilio:</strong> Tu antojo al alcance de un clic.</span></li>
+            <li><span data-i18n="dobleu.feature1.li2"><strong>Servicios:</strong> Desde una reparación hasta lavandería, todo eso y más dentro de la app.</span></li>
+            <li><span data-i18n="dobleu.feature1.li3"><strong>Mandaditos:</strong> No te preocupes, nosotros lo llevamos.</span></li>
           </ul>
         </div>
       </div>
@@ -89,13 +94,13 @@
         </div>
 
         <div class="feature-content">
-          <h2 class="feature-title">Logística eficiente en movimiento</h2>
-          <p class="feature-sub">Diseñada para nuestra red de mensajeros. Optimiza rutas de entrega para comida y mandaditos, permitiendo una gestión de pedidos ágil y un seguimiento preciso para garantizar entregas en tiempo récord.</p>
+          <h2 class="feature-title" data-i18n="dobleu.feature2.title">Logística eficiente en movimiento</h2>
+          <p class="feature-sub" data-i18n="dobleu.feature2.p">Diseñada para nuestra red de mensajeros. Optimiza rutas de entrega para comida y mandaditos, permitiendo una gestión de pedidos ágil y un seguimiento preciso para garantizar entregas en tiempo récord.</p>
 
           <ul class="feature-list">
-            <li><strong>Entregas:</strong> Llevando la felicidad a tu casa.</li>
-            <li><strong>Equipos:</strong> Forma tu team y mantente conectado.</li>
-            <li><strong>Soporte:</strong> Estaremos contigo ante cualquier problemática.</li>
+            <li><span data-i18n="dobleu.feature2.li1"><strong>Entregas:</strong> Llevando la felicidad a tu casa.</span></li>
+            <li><span data-i18n="dobleu.feature2.li2"><strong>Equipos:</strong> Forma tu team y mantente conectado.</span></li>
+            <li><span data-i18n="dobleu.feature2.li3"><strong>Soporte:</strong> Estaremos contigo ante cualquier problemática.</span></li>
           </ul>
         </div>
       </div>
@@ -107,12 +112,12 @@
         </div>
 
         <div class="feature-content">
-          <h2 class="feature-title">El aliado estratégico de tu negocio</h2>
-          <p class="feature-sub">Potenciamos comercios y profesionales. Gestiona pedidos en tiempo real, administra agendas de citas y digitaliza tu oferta de servicios con una interfaz diseñada para maximizar tu productividad.</p>
+          <h2 class="feature-title" data-i18n="dobleu.feature3.title">El aliado estratégico de tu negocio</h2>
+          <p class="feature-sub" data-i18n="dobleu.feature3.p">Potenciamos comercios y profesionales. Gestiona pedidos en tiempo real, administra agendas de citas y digitaliza tu oferta de servicios con una interfaz diseñada para maximizar tu productividad.</p>
 
           <ul class="feature-list">
-            <li><strong>Negocios:</strong> Tu negocio, ahora disponible a un clic.</li>
-            <li><strong>Servicios:</strong> Cubriendo todas tus necesidades dentro de una app.</li>
+            <li><span data-i18n="dobleu.feature3.li1"><strong>Negocios:</strong> Tu negocio, ahora disponible a un clic.</span></li>
+            <li><span data-i18n="dobleu.feature3.li2"><strong>Servicios:</strong> Cubriendo todas tus necesidades dentro de una app.</span></li>
           </ul>
         </div>
       </div>
@@ -123,24 +128,22 @@
   <!-- FEATURE CARDS (replaces testimonials & blog) -->
   <section class="section cards-section">
     <div class="container">
-      <h2 class="title reveal">Mas sobre DOBLEU</h2>
+      <h2 class="title reveal" data-i18n="dobleu.cards.title">Mas sobre DOBLEU</h2>
 
       <div class="cards-grid two">
         <div class="feature-card reveal">
-          <h4>DOBLEU Home</h4>
-          <p class="muted">Inteligencia aplicada al hogar.</p>
-          <p>Transformamos viviendas en entornos inteligentes: controla accesos, dispositivos y automatizaciones desde tu celular.</p>
+          <h4 data-i18n="card1.title">DOBLEU Home</h4>
+          <p class="muted" data-i18n="card1.muted">Inteligencia aplicada al hogar.</p>
+          <p data-i18n="card1.p">Transformamos viviendas en entornos inteligentes: controla accesos, dispositivos y automatizaciones desde tu celular.</p>
           <div class="card-actions">
-            
           </div>
         </div>
 
         <div class="feature-card reveal">
-          <h4>DOBLEU Box</h4>
-          <p class="muted">Gestión inteligente para cualquier entorno.</p>
-          <p>La solución IoT avanzada para tu hogar. Monitorea variables críticas y gestiona la infraestructura de tu hogar en tiempo real, elevando la experiencia del usuario y la eficiencia operativa.</p>
+          <h4 data-i18n="card2.title">DOBLEU Box</h4>
+          <p class="muted" data-i18n="card2.muted">Gestión inteligente para cualquier entorno.</p>
+          <p data-i18n="card2.p">La solución IoT avanzada para tu hogar. Monitorea variables críticas y gestiona la infraestructura de tu hogar en tiempo real, elevando la experiencia del usuario y la eficiencia operativa.</p>
           <div class="card-actions">
-            
           </div>
         </div>
         <div class="collage-wrap">
@@ -158,8 +161,8 @@
       </div>
 
       <div class="cta-content">
-        <h2>Todo lo que necesitas, donde tú estes</h2>
-        <h3>Desde tu antojo favorito hasta ese mandadito urgente, DOBLEU lo hace por ti </h3>
+        <h2 data-i18n="cta.h2">Todo lo que necesitas, donde tú estes</h2>
+        <h3 data-i18n="cta.h3">Desde tu antojo favorito hasta ese mandadito urgente, DOBLEU lo hace por ti </h3>
         <br>
 
         <div class="store-buttons">
@@ -182,7 +185,7 @@
           <img src="/img/LOGO_WONTEC.png" alt="image" class="logo-small" />
         </div>
 
-        <p class="footer-desc">Telecomunicaciones, redes empresariales, seguridad informática y
+        <p class="footer-desc" data-i18n="footer.desc">Telecomunicaciones, redes empresariales, seguridad informática y
           desarrollo de software para impulsar industrias en Latinoamérica.</p>
 
         <div class="social-icon">
@@ -191,30 +194,30 @@
         </div>
       </div>
       <div class="footer-col">
-        <h3>Servicios</h3>
+        <h3 data-i18n="footer.services">Servicios</h3>
         <br>
-        <ul>
-          <li><a href="/pages/servicesTI.html"><i class="fa-regular fa-angles-right me-1"></i>Tecnologías de la información</a></li>
-          <li><a href="/pages/servicesCS.html"><i class="fa-regular fa-angles-right me-1"></i>Seguridad informática</a></li>
-          <li><a href="/pages/servicesRIC.html"><i class="fa-regular fa-angles-right me-1"></i>Redes comerciales e industriales</a></li>
+          <ul>
+          <li><a href="/pages/servicesTI.html"><i class="fa-regular fa-angles-right me-1"></i><span data-i18n="dobleu.footer.svc1">Tecnologías de la información</span></a></li>
+          <li><a href="/pages/servicesCS.html"><i class="fa-regular fa-angles-right me-1"></i><span data-i18n="dobleu.footer.svc2">Seguridad informática</span></a></li>
+          <li><a href="/pages/servicesRIC.html"><i class="fa-regular fa-angles-right me-1"></i><span data-i18n="dobleu.footer.svc3">Redes comerciales e industriales</span></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h3>Contacto</h3>
+        <h3 data-i18n="footer.contact">Contacto</h3>
         <br>
         <ul class="footer-contact">
           <li>
             <i class="fas fa-envelope"></i>
-            <div class="info"><h5>Correo:</h5><p><a href="mailto:fermin.garcia@wontec.com.mx">fermin.garcia@wontec.com.mx</a></p></div>
+            <div class="info"><h5 data-i18n="footer.emailLabel">Correo:</h5><p><a href="mailto:fermin.garcia@wontec.com.mx" data-i18n="footer.email">fermin.garcia@wontec.com.mx</a></p></div>
           </li>
           <li>
             <i class="fas fa-clock"></i>
-            <div class="info"><h5>Horario de servicio:</h5><p>Lunes - Viernes: 09.00 AM - 5.00 PM</p></div>
+            <div class="info"><h5 data-i18n="footer.hoursLabel">Horario de servicio:</h5><p data-i18n="footer.hours">Lunes - Viernes: 09.00 AM - 5.00 PM</p></div>
           </li>
           <li>
             <br>
             <i class="fas fa-phone"></i>
-            <div class="info"><h5>Telefono de contacto:</h5><p><a href="tel:+77731544230">773 154 4230</a></p></div>
+            <div class="info"><h5 data-i18n="footer.phoneLabel">Telefono de contacto:</h5><p><a href="tel:+77731544230" data-i18n="footer.phone">773 154 4230</a></p></div>
           </li>
         </ul>
       </div>

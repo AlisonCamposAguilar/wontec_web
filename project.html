@@ -55,13 +55,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="project.html" class="nav-item nav-link active">Projects</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="index.html" class="nav-item nav-link" data-i18n="nav.home">Home</a>
+                        <a href="about.html" class="nav-item nav-link" data-i18n="nav.about">About</a>
+                        <a href="service.html" class="nav-item nav-link" data-i18n="nav.services">Services</a>
+                        <a href="project.html" class="nav-item nav-link active" data-i18n="nav.cases">Projects</a>
+                        <a href="contact.html" class="nav-item nav-link" data-i18n="nav.contact">Contact</a>
                     </div>
-                    <a href="https://htmlcodex.com/downloading/?item=2696" class="btn btn-light rounded-pill px-3 d-none d-lg-block">Buy Pro Version</a>
+                    <a href="https://htmlcodex.com/downloading/?item=2696" class="btn btn-light rounded-pill px-3 d-none d-lg-block" data-i18n="buy_pro">Buy Pro Version</a>
+                    <div class="lang-switch d-none d-lg-flex ms-3">
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -96,8 +100,8 @@
     <div class="container-fluid bg-light py-5">
         <div class="container py-5">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Case Study</div>
-                <h1 class="mb-4">Explore Our Recent AI Case Studies</h1>
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3" data-i18n="project.badge">Case Study</div>
+                <h1 class="mb-4" data-i18n="project.h1">Explore Our Recent AI Case Studies</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
@@ -147,12 +151,12 @@
                     <a href="index.html" class="d-inline-block mb-3">
                         <h1 class="text-white">AI<span class="text-primary">.</span>Tech</h1>
                     </a>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                    <p class="mb-0" data-i18n="footer.desc">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
                         amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
                         clita duo justo et tempor</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <h5 class="text-white mb-4" data-i18n="footer.getInTouch">Get In Touch</h5>
                     <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
@@ -165,20 +169,20 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Popular Link</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Career</a>
+                    <h5 class="text-white mb-4" data-i18n="footer.popular">Popular Link</h5>
+                    <a class="btn btn-link" href="" data-i18n="footer.link.about">About Us</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.link.contact">Contact Us</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.link.privacy">Privacy Policy</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.link.terms">Terms & Condition</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.link.career">Career</a>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Robotic Automation</a>
-                    <a class="btn btn-link" href="">Machine learning</a>
-                    <a class="btn btn-link" href="">Predictive Analysis</a>
-                    <a class="btn btn-link" href="">Data Science</a>
-                    <a class="btn btn-link" href="">Robot Technology</a>
+                    <h5 class="text-white mb-4" data-i18n="footer.ourServices">Our Services</h5>
+                    <a class="btn btn-link" href="" data-i18n="footer.service.link1">Robotic Automation</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.service.link2">Machine learning</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.service.link3">Predictive Analysis</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.service.link4">Data Science</a>
+                    <a class="btn btn-link" href="" data-i18n="footer.service.link5">Robot Technology</a>
                 </div>
             </div>
         </div>
