@@ -1,17 +1,23 @@
-/* Scroll reveal */
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
+/* Scroll reveal: activate when in view and also run on load/partials injection */
+function handleReveal(){
+  const reveals = document.querySelectorAll(".reveal");
   const trigger = window.innerHeight * 0.85;
-
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
-
     if(top < trigger){
       el.classList.add("active");
     }
   });
-});
+}
+
+// Run on scroll and also on load/DOMContentLoaded/after partials are injected
+window.addEventListener('scroll', handleReveal);
+document.addEventListener('DOMContentLoaded', handleReveal);
+window.addEventListener('load', handleReveal);
+document.addEventListener('partialsLoaded', handleReveal);
+
+// Initial run in case elements are already visible
+handleReveal();
 
 
 /* Menú móvil */

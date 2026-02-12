@@ -988,6 +988,11 @@ nav a {
   background: var(--accent-1);
   box-shadow: 0 6px 14px rgba(255, 175, 20, 0.18);
 }
+.lang-switch{ display:flex; gap:8px; align-items:center }
+.lang-btn{ background:transparent; border:1px solid rgba(255,255,255,0.08); color:inherit; padding:6px 8px; border-radius:6px; cursor:pointer }
+.lang-btn.active{ background:var(--accent-4); color:var(--accent-on-dark); border-color:var(--accent-4) }
+.footer__copyright{ border-top:1px solid rgba(255,255,255,.03); padding:18px 0; margin-top:30px }
+.footer__copyright p, .footer__copyright a{ color: rgba(230,233,242,.7) }
 
 @media (max-width: 1024px) {
   .partners-logos.carousel .carousel-item {
