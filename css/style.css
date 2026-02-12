@@ -1059,6 +1059,11 @@ h6,
 .footer-contact .info h5{ color:#fff; font-size:1rem; margin:0 0 4px }
 .footer-contact .info p{ margin:0; color: rgba(230,233,242,.85) }
 .footer p.mb-20 i, .footer .mb-20 i{ font-size:22px; color:var(--accent-4); margin-top:4px; vertical-align:middle; margin-right:8px; display:inline-block }
+
+/* Language switcher */
+.lang-switch{ display:flex; gap:8px; align-items:center }
+.lang-btn{ background:transparent; border:1px solid rgba(255,255,255,0.08); color:inherit; padding:6px 8px; border-radius:6px; cursor:pointer }
+.lang-btn.active{ background:var(--accent-4); color:var(--accent-on-dark); border-color:var(--accent-4) }
 .footer__copyright{ border-top:1px solid rgba(255,255,255,.03); padding:18px 0; margin-top:30px }
 .footer__copyright p, .footer__copyright a{ color: rgba(230,233,242,.7) }
 
