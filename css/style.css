@@ -181,6 +181,45 @@ h6,
     background-size: cover;
 }
 
+/* Responsive navbar adjustments */
+/* Ensure page content is not hidden behind the fixed navbar */
+body {
+    padding-top: 75px;
+}
+
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 64px;
+    }
+}
+
+/* Make logo scale on smaller devices */
+.navbar-brand img {
+    max-height: 56px;
+    height: auto;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand img {
+        max-height: 40px;
+    }
+    .navbar {
+        height: auto;
+        padding: 8px 0 !important;
+    }
+    /* place language buttons inside collapsed menu on small screens */
+    .lang-switch.d-none.d-lg-flex {
+        display: none !important;
+    }
+}
+
+/* Desktop language switch positioning (keeps previous visual) */
+.lang-switch {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+}
+
 .hero-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
@@ -1205,4 +1244,38 @@ h6,
 .close-description:hover {
     background-color: #0a58ca !important;
     transform: translateY(-2px);
+}
+
+/* Language switch (inline near logo on small screens, corner on large screens) */
+.lang-switch{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-left:12px;
+}
+.lang-switch .lang-btn{
+    border:1px solid rgba(255,255,255,.6);
+    background:transparent;
+    color:#fff;
+    padding:6px 10px;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+}
+.lang-switch .lang-btn:focus{
+    outline:2px solid rgba(255,255,255,.15);
+}
+
+/* On large screens keep the language buttons inline between logo and menu */
+@media (min-width: 992px){
+    .lang-switch{
+        position:static;
+        margin-left:12px;
+    }
+}
+
+@media (max-width: 991.98px){
+    .navbar-brand{
+        gap:8px;
+    }
 }
